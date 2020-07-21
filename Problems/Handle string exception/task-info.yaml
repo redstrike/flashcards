@@ -1,0 +1,18 @@
+type: code
+files:
+- name: src/Task.kt
+  visible: true
+  text: |-
+    fun main() {
+        val index = readLine()!!.toInt()
+        val word = readLine()!!
+        println(word[index])
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/7606
+status: Solved
+feedback:
+  message: <html>Correct solution<br/><br/>Continue on <a href="https://hyperskill.org/learn/step/7606">JetBrains
+    Academy</a></html>
+  time: Tue, 21 Jul 2020 20:25:07 UTC
+record: -1
