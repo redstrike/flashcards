@@ -3,3 +3,6 @@ content:
 - Handle arithmetic exception
 - Handle string exception
 - Handle number format exception
+- Max of four numbers
+- Fractional part
+- Quadratic equation
