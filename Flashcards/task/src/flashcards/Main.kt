@@ -4,22 +4,42 @@ fun main() {
     println("Input the number of cards:")
     val numCards = readLine()!!.toInt()
     // Create the defined amount of cards
-    val terms = Array(numCards) { "" }
-    val definitions = Array(numCards) { "" }
+    val flashcards = mutableMapOf<String, String>()
     repeat(numCards) { it: Int ->
         val cardNo = it + 1
         println("The card #$cardNo:")
-        terms[it] = readLine()!!.trim()
+        var term = readLine()!!.trim()
+        while (flashcards.containsKey(term)) {
+            println("The card \"$term\" already exists. Try again:")
+            term = readLine()!!.trim()
+        }
         println("The definition of the card #$cardNo:")
-        definitions[it] = readLine()!!.trim()
+        var definition = readLine()!!.trim()
+        while (flashcards.containsValue(definition)) {
+            println("The definition \"$definition\" already exists. Try again:")
+            definition = readLine()!!.trim()
+        }
+        flashcards[term] = definition
     }
     // Test the user's knowledge
-    repeat(numCards) { it: Int ->
-        println("Print the definition of \"${terms[it]}\"")
+    for ((term, definition) in flashcards) {
+        println("Print the definition of \"$term\":")
         val answer = readLine()!!.trim()
-        println(when (answer) {
-            definitions[it] -> "Correct answer."
-            else -> "Wrong answer. The correct one is \"${definitions[it]}\""
+        println(when {
+            answer == definition -> "Correct answer."
+            flashcards.containsValue(answer) -> {
+                val anotherTerm = flashcards.filter { it.value == answer }.keys.first()
+                getWrongMessage(definition, anotherTerm)
+            }
+            else -> getWrongMessage(definition)
         })
     }
+}
+
+private fun getWrongMessage(definition: String, anotherTerm: String? = null): String {
+    val message = "Wrong answer. The correct one is \"$definition\""
+    if (anotherTerm.isNullOrEmpty()) {
+        return "$message."
+    }
+    return "$message, you've just written the definition of \"$anotherTerm\"."
 }
