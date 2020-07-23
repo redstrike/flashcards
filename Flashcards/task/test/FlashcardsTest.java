@@ -1,7 +1,7 @@
 import flashcards.MainKt;
-import org.hyperskill.hstest.v6.stage.BaseStageTest;
+import org.hyperskill.hstest.stage.StageTest;
 
-public abstract class FlashcardsTest<T> extends BaseStageTest<T> {
+public abstract class FlashcardsTest<T> extends StageTest<T> {
     public FlashcardsTest() {
         super(MainKt.class);
     }
