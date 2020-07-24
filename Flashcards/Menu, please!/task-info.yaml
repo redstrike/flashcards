@@ -311,6 +311,16 @@ files:
     \  }\n            )\n        }\n        (startPhrases + repeatingPhrases)\n  \
     \  }\n\n}\n\n"
   learner_created: false
+- name: capitalsNew.txt
+  visible: true
+  learner_created: true
+- name: capitals.txt
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/83/stages/461/implement
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations! Continue on <a href="https://hyperskill.org/projects/83/stages/461/implement">JetBrains
+    Academy</a>
+  time: Fri, 24 Jul 2020 20:45:26 UTC
 record: -1

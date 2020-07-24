@@ -130,5 +130,7 @@ topics:
     theory_id: 7770
   - title: Overriding functions
     theory_id: 7884
+  - title: toString()
+    theory_id: 10193
   - title: Data class
     theory_id: 8526
