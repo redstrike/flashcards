@@ -489,25 +489,9 @@ files:
   visible: true
   learner_created: true
 feedback_link: https://hyperskill.org/projects/83/stages/463/implement
-status: Failed
+status: Solved
 feedback:
-  message: "Wrong answer in test #2\n\nThe number of lines in your output is 18, but\
-    \ it should be 19. Check, that you output your lines with println, not print.\
-    \ And there are no extra outputs.\n\nPlease find below the output of your program\
-    \ during this failed test.\nNote that the &#39;&gt;&#39; character indicates the\
-    \ beginning of the input line.\n\n---\n\nArguments: -export capitals.txt\n\n\n\
-    Input the action (add, remove, import, export, ask, exit, log, hardest card, reset\
-    \ stats):\n&gt; add\nThe card:\n&gt; France\nThe definition of the card:\n&gt;\
-    \ Paris\nThe pair (&quot;France&quot;:&quot;Paris&quot;) has been added.\n\nInput\
-    \ the action (add, remove, import, export, ask, exit, log, hardest card, reset\
-    \ stats):\n&gt; add\nThe card:\n&gt; Russia\nThe definition of the card:\n&gt;\
-    \ Moscow\nThe pair (&quot;Russia&quot;:&quot;Moscow&quot;) has been added.\n\n\
-    Input the action (add, remove, import, export, ask, exit, log, hardest card, reset\
-    \ stats):\n&gt; ask\nHow many times to ask?\n&gt; 3\nPrint the definition of &quot;Russia&quot;:\n\
-    &gt; France\nWrong answer. The correct one is &quot;Moscow&quot;.\nPrint the definition\
-    \ of &quot;Russia&quot;:\n&gt; ??\nWrong answer. The correct one is &quot;Moscow&quot;.\n\
-    Print the definition of &quot;France&quot;:\n&gt; \nWrong answer. The correct\
-    \ one is &quot;Paris&quot;.\n\nInput the action (add, remove, import, export,\
-    \ ask, exit, log, hardest card, reset stats):\n&gt; exit\nBye bye!"
-  time: Mon, 27 Jul 2020 19:31:54 UTC
+  message: Congratulations! Continue on <a href="https://hyperskill.org/projects/83/stages/463/implement">JetBrains
+    Academy</a>
+  time: Tue, 28 Jul 2020 18:50:56 UTC
 record: 7

@@ -7,19 +7,38 @@ private val cards = mutableMapOf<String, String>()
 private val stats = mutableMapOf<String, Int>()
 private val logs = mutableListOf<String>()
 
-fun main() {
+fun main(args: Array<String>) {
+    // Get command line arguments
+    var importPath = ""
+    var exportPath = ""
+    if (args.isNotEmpty()) {
+        for (i in args.indices step 2) {
+            when (args[i]) {
+                "-import" -> importPath = args[i + 1]
+                "-export" -> exportPath = args[i + 1]
+            }
+        }
+    }
+    // Import cards on init
+    if (importPath.isNotEmpty()) importCards(importPath)
+    // Start flashcards
     while (true) {
         printLine("\nInput the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):")
         when (readInput().toLowerCase()) {
             "add" -> addCard()
             "remove" -> removeCard()
-            "export" -> exportCards()
-            "import" -> importCards()
+            "export" -> exportCards(getFilename())
+            "import" -> importCards(getFilename())
             "ask" -> ask()
             "log" -> exportLogs()
             "hardest card" -> getHardestCards()
             "reset stats" -> resetStats()
-            "exit" -> return printLine("Bye bye!")
+            "exit" -> {
+                printLine("Bye bye!")
+                // Export cards on exit
+                if (exportPath.isNotEmpty()) exportCards(exportPath)
+                return
+            }
         }
     }
 }
@@ -68,25 +87,24 @@ private fun removeCard() {
     printLine("The card has been removed.")
 }
 
-private fun getFile(): File {
+private fun getFilename(): String {
     printLine("File name:")
-    return File(readInput())
+    return readInput()
 }
 
-private fun exportCards() {
-    val file = getFile()
+private fun exportCards(pathname: String) {
     val data = StringBuilder()
     cards.forEach {
         val (term, definition) = it
         val errorCount = stats[term]
         data.append("$term=$definition=$errorCount\n")
     }
-    file.writeText(data.toString())
+    File(pathname).writeText(data.toString())
     printLine("${cards.size} cards have been saved.")
 }
 
-private fun importCards() {
-    val file = getFile()
+private fun importCards(pathname: String) {
+    val file = File(pathname)
     if (!file.exists()) {
         printLine("File not found.")
         return
@@ -133,7 +151,7 @@ private fun getWrongMessage(definition: String, anotherTerm: String? = null): St
 }
 
 private fun exportLogs() {
-    val file = getFile()
+    val file = File(getFilename())
     printLine("The log has been saved.")
     file.writeText(logs.joinToString("\n"))
 }
