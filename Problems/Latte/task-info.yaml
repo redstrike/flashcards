@@ -1,0 +1,18 @@
+type: code
+files:
+- name: src/Task.kt
+  visible: true
+  text: |-
+    class Latte(val milk: String, cost: Int, volume: Int): Coffee (cost, volume) {
+        override fun toString(): String {
+            (...)
+        }
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/10201
+status: Solved
+feedback:
+  message: <html>Correct solution<br/><br/>Continue on <a href="https://hyperskill.org/learn/step/10201">JetBrains
+    Academy</a></html>
+  time: Tue, 28 Jul 2020 16:18:43 UTC
+record: -1
