@@ -1,15 +1,6 @@
 type: edu
 custom_name: stage7
 files:
-- name: src/flashcards/Main.kt
-  visible: true
-  text: |
-    package flashcards
-
-    fun main() {
-        println("Hello, World!")
-    }
-  learner_created: false
 - name: test/FlashcardsTest.java
   visible: false
   text: |
@@ -488,10 +479,19 @@ files:
 - name: capitals.txt
   visible: true
   learner_created: true
+- name: src/flashcards/Main.kt
+  visible: true
+  text: |
+    package flashcards
+
+    fun main() {
+        println("Hello, World!")
+    }
+  learner_created: false
 feedback_link: https://hyperskill.org/projects/83/stages/463/implement
 status: Solved
 feedback:
   message: Congratulations! Continue on <a href="https://hyperskill.org/projects/83/stages/463/implement">JetBrains
     Academy</a>
-  time: Tue, 28 Jul 2020 18:50:56 UTC
+  time: Tue, 28 Jul 2020 20:11:01 UTC
 record: 7
